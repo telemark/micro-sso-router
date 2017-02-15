@@ -20,7 +20,7 @@ module.exports = async (request, response) => {
     response.writeHead(301, { Location: url })
     response.end()
   } else if (pathname === '/ip') {
-    send(response, 200, {ip: ip})
+    send(response, 200, ip)
   } else {
     const readme = readFileSync('./README.md', 'utf-8')
     const html = marked(readme)
