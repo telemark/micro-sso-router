@@ -5,6 +5,16 @@
 
 Microservice for routing requests
 
+# API
+
+### GET ```?origin=originurl```
+
+redirects you to correct sso instance
+
+### GET ```/ip```
+
+shows your ip according to the system
+
 ## License
 [MIT](LICENSE)
 
