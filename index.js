@@ -8,16 +8,19 @@ const getAuthUrl = require('./lib/get-auth-url')
 const getMyIp = require('./lib/get-my-ip')
 
 module.exports = async (request, response) => {
-  console.log(response.connection.remoteAddress)
+  const ip = {
+    'xForwardedFor': request.headers['x-forwarded-for'] || false,
+    remoteAddress: request.connection.remoteAddress || false
+  }
   const { pathname, query } = await parse(request.url, true)
   if (query.origin) {
     const origin = query.origin
-    const authUrl = getAuthUrl(request)
+    const authUrl = getAuthUrl(getMyIp(ip))
     const url = `${authUrl}?origin=${origin}`
     response.writeHead(301, { Location: url })
     response.end()
   } else if (pathname === '/ip') {
-    send(response, 200, {ip: getMyIp(request)})
+    send(response, 200, {ip: ip})
   } else {
     const readme = readFileSync('./README.md', 'utf-8')
     const html = marked(readme)
