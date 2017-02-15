@@ -3,6 +3,8 @@
 
 # micro-sso-router
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-sso-router.svg)](https://greenkeeper.io/)
+
 Microservice for routing requests
 
 # API
