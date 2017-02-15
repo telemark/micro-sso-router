@@ -8,6 +8,7 @@ const getAuthUrl = require('./lib/get-auth-url')
 const getMyIp = require('./lib/get-my-ip')
 
 module.exports = async (request, response) => {
+  console.log(response.connection.remoteAddress)
   const { pathname, query } = await parse(request.url, true)
   if (query.origin) {
     const origin = query.origin
