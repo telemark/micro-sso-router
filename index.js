@@ -17,7 +17,7 @@ module.exports = async (request, response) => {
     const origin = query.origin
     const authUrl = getAuthUrl(getMyIp(ip))
     const url = `${authUrl}?origin=${origin}`
-    response.writeHead(301, { Location: url })
+    response.writeHead(302, { Location: url })
     response.end()
   } else if (pathname === '/ip') {
     send(response, 200, ip)
