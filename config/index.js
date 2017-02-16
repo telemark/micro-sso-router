@@ -4,6 +4,6 @@ const SSO_IPS = process.env.SSO_IPS ? process.env.SSO_IPS.split(',') : ['139.164
 
 module.exports = {
   AUTH_URL_INTERNAL: process.env.AUTH_URL_INTERNAL || 'http://authportalen',
-  AUTH_URL_EXTERNAL: process.env.AUTH_URL_EXTERNAL || 'https://ldap.auth.mikrotjeneste.win/login',
+  AUTH_URL_EXTERNAL: process.env.AUTH_URL_EXTERNAL || 'https://auth.service.t-fk.no/login',
   SSO_IPS: SSO_IPS
 }
