@@ -8,7 +8,7 @@ Microservice for routing requests
 
 # API
 
-### GET ```?origin=originurl&nextpath=/pathAfterLogin```
+### GET ```?origin=originurl&nextPath=/pathAfterLogin```
 
 redirects you to correct sso instance
 
