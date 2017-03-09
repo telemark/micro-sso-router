@@ -8,9 +8,14 @@ Microservice for routing requests
 
 # API
 
-### GET ```?origin=originurl```
+### GET ```?origin=originurl&nextpath=/pathAfterLogin```
 
 redirects you to correct sso instance
+
+| URL param  | Description                                                             |
+|------------|-------------------------------------------------------------------------|
+| origin     | The URL to redirect to after login                                      |
+| nextPath   | nextPath is stored in JWT after login and can be used as local redirect |
 
 ### GET ```/ip```
 
