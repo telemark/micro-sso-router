@@ -1,7 +1,7 @@
 {
   "name": "micro-sso-router",
   "description": "Microservice for routing requests",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "private": true,
   "author": {
@@ -47,7 +47,7 @@
   "devDependencies": {
     "coveralls": "2.11.16",
     "nsp": "2.6.3",
-    "standard": "8.6.0",
+    "standard": "9.0.2",
     "tap": "10.2.1"
   },
   "dependencies": {
