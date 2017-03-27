@@ -1,7 +1,7 @@
 {
   "name": "micro-sso-router",
   "description": "Microservice for routing requests",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "private": true,
   "author": {
@@ -11,7 +11,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=7.5.0"
+    "node": ">=7.7.4"
   },
   "scripts": {
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
@@ -20,14 +20,14 @@
     "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
     "setup": "npm install",
     "standard-fix": "standard --fix",
-    "start": "micro -p 8080",
-    "dev": "micro",
+    "start": "micro",
     "now-deploy": "npm test && now --npm && now alias"
   },
   "keywords": [
     "microservice",
     "micro",
-    "echo"
+    "sso",
+    "Telemark fylkeskommune"
   ],
   "repository": {
     "type": "git",
@@ -36,13 +36,15 @@
   "bugs": {
     "url": "https://github.com/telemark/micro-sso-router/issues"
   },
+  "homepage": "https://github.com/telemark/micro-sso-router",
   "now": {
     "alias": [
       "sso.router.t-fk.win"
     ],
     "env": {
       "NODE_ENV": "production"
-    }
+    },
+    "type": "npm"
   },
   "devDependencies": {
     "coveralls": "2.12.0",
