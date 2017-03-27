@@ -15,8 +15,9 @@ module.exports = async (request, response) => {
   const { pathname, query } = await parse(request.url, true)
   if (query.origin) {
     const origin = query.origin
+    const nextPath = query.nextPath || ''
     const authUrl = getAuthUrl(getMyIp(ip))
-    const url = `${authUrl}?origin=${origin}`
+    const url = `${authUrl}?origin=${origin}&nextPath=${nextPath}`
     response.writeHead(302, { Location: url })
     response.end()
   } else if (pathname === '/ip') {
