@@ -54,6 +54,6 @@
   },
   "dependencies": {
     "marked": "0.3.6",
-    "micro": "7.2.2"
+    "micro": "7.3.0"
   }
 }
