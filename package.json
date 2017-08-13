@@ -1,7 +1,7 @@
 {
   "name": "micro-sso-router",
   "description": "Microservice for routing requests",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "license": "MIT",
   "private": true,
   "author": {
