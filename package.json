@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "marked": "0.3.6",
-    "micro": "8.0.3",
+    "micro": "8.0.4",
     "wildcard": "1.1.2"
   }
 }
