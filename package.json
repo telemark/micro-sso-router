@@ -14,7 +14,7 @@
     "node": ">=10.14.2"
   },
   "scripts": {
-    "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
+    "test": "standard && npm audit && tap --reporter=spec test/**/*.js",
     "test-offline": "standard && tap --reporter=spec test/**/*.js",
     "coverage": "tap test/**/*.js --coverage",
     "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
@@ -32,7 +32,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/telemark/micro-sso-router.git"
+    "url": "git+https://github.com/telemark/micro-sso-router.git"
   },
   "bugs": {
     "url": "https://github.com/telemark/micro-sso-router/issues"
@@ -49,7 +49,6 @@
   },
   "devDependencies": {
     "coveralls": "3.0.2",
-    "nsp": "3.2.1",
     "standard": "12.0.1",
     "tap": "12.1.1"
   },
