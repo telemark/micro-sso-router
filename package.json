@@ -41,7 +41,7 @@
     "tap": "14.4.1"
   },
   "dependencies": {
-    "marked": "0.6.2",
+    "marked": "0.7.0",
     "micro": "9.3.4",
     "wildcard": "1.1.2"
   }
