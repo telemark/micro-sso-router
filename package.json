@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/telemark/micro-sso-router",
   "devDependencies": {
-    "coveralls": "3.0.7",
+    "coveralls": "3.0.9",
     "standard": "14.3.1",
     "tap": "14.10.5"
   },
