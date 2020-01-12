@@ -1,30 +1,24 @@
-'use strict'
-
-const readFileSync = require('fs').readFileSync
-const marked = require('marked')
-const { parse } = require('url')
-const { send } = require('micro')
 const getAuthUrl = require('./lib/get-auth-url')
 const getMyIp = require('./lib/get-my-ip')
 
 module.exports = async (request, response) => {
   const ip = {
-    'xForwardedFor': request.headers['x-forwarded-for'] || false,
+    xForwardedFor: request.headers['x-forwarded-for'] || false,
     remoteAddress: request.connection.remoteAddress || false
   }
-  const { pathname, query } = await parse(request.url, true)
+  const pathname = request.url
+  const query = request.query || {}
   if (query.origin) {
-    const origin = query.origin
-    const nextPath = query.nextPath ? `&nextPath=${query.nextPath}` : ''
+    const { origin, nextPath } = query
+    const next = nextPath ? `&nextPath=${nextPath}` : ''
     const authUrl = getAuthUrl(getMyIp(ip))
-    const url = `${authUrl}?origin=${origin}${nextPath}`
+    const url = `${authUrl}?origin=${origin}${next}`
     response.writeHead(302, { Location: url })
     response.end()
   } else if (pathname === '/ip') {
-    send(response, 200, ip)
+    response.send(ip)
   } else {
-    const readme = readFileSync('./README.md', 'utf-8')
-    const html = marked(readme)
-    send(response, 200, html)
+    response.status(400)
+    response.send('Bad request')
   }
 }
