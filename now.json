@@ -1,11 +1,41 @@
 {
-  "version": 1,
-  "alias": ["sso.service.t-fk.no"],
+  "version": 2,
+  "name": "micro-sso-router",
+  "scope": "telemark",
+  "alias": [
+    "sso.service.t-fk.no"
+  ],
   "env": {
     "NODE_ENV": "production",
     "AUTH_URL_INTERNAL": "http://authportalen",
     "AUTH_URL_EXTERNAL": "https://auth.service.t-fk.no/login",
     "SSO_IPS": "139.164.160.2,213.188.19.179,139.164.152.10"
   },
-  "type": "npm"
+  "builds": [
+    {
+      "src": "/index.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "/*.md",
+      "use": "@now/md"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/README.html"
+    },
+    {
+      "src": "/docs",
+      "dest": "/README.html"
+    },
+    { "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ]
 }
