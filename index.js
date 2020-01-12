@@ -18,7 +18,7 @@ module.exports = async (request, response) => {
   } else if (pathname === '/ip') {
     response.send(ip)
   } else {
-    response.status(400)
-    response.send('Bad request')
+    response.writeHead(302, { Location: '/docs' })
+    response.end()
   }
 }
